@@ -1,0 +1,385 @@
+// all scss link up start
+@import "./variable";
+@import "./mixin";
+@import "./extend";
+@import "./reset";
+@import "./global";
+@import "./color";
+@import "./typoghraphy";
+//all scss link up end
+
+// preloader scss start
+.preloader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $blue;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.load-icon {
+  font-size: 50px;
+  color: #fff;
+  animation: rocket 1s linear;
+  opacity: 0;
+}
+.rocket-icon {
+  transform: rotate(-45deg);
+}
+.text {
+  font-size: 36px;
+  color: #fff;
+}
+
+.dot {
+  animation: preloader 1s infinite linear;
+  animation-delay: 0.5s;
+}
+
+.dot2 {
+  animation-delay: 0.8s;
+}
+.dot3 {
+  animation-delay: 1s;
+}
+@keyframes preloader {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes rocket {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40px);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-80px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-320px);
+    opacity: 1;
+  }
+}
+// preloader scss end
+
+// header-section scss start
+.header-section {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.22);
+  z-index: 20;
+}
+.header-logo {
+  width: 250px;
+}
+.nav-link {
+  position: relative;
+  padding: 30px 15px !important;
+  color: $black !important;
+  text-transform: uppercase;
+  transition: 0.4s;
+  &:hover {
+    color: $blue !important;
+    &::before {
+      height: 4px;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background-color: $blue;
+    transition: 0.4s;
+  }
+}
+.active-nav {
+  font-weight: 600;
+  color: $blue !important;
+  &::before {
+    height: 4px;
+  }
+}
+.navbar-expand-lg .navbar-collapse {
+  justify-content: end;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  padding: 0;
+  background: transparent !important;
+}
+// header-section scss end
+
+// banner-section scss start
+.banner-section {
+  padding: 220px 0 130px 0;
+}
+.banner-title {
+  font-size: 25px;
+  color: $blue;
+  margin-bottom: 20px;
+}
+.banner-my-name {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.banner-into {
+  margin-bottom: 20px;
+  a {
+    color: $blue;
+  }
+}
+.social-link {
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid $blue;
+  color: $blue;
+  transition: 0.4s;
+  &:hover {
+    background-color: $blue;
+    color: #fff;
+  }
+}
+// banner-section scss end
+
+// about-section scss start
+.about-title {
+  margin-bottom: 20px;
+  span {
+    color: $blue;
+  }
+}
+.about-details {
+  margin-bottom: 20px;
+}
+// about-section scss end
+
+// service-section scss start
+.service-item {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+}
+.service-name {
+  margin: 15px 0 10px 0;
+  color: $blue;
+}
+.service-img {
+  height: 140px;
+}
+// service-section scss end
+
+// skill-achievement-section scss start
+.arch-title {
+  color: $blue;
+  margin-bottom: 60px;
+}
+.arch-item {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: $secondery-color;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.arch-num {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-color: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+}
+.arch-text {
+  color: #fff;
+}
+.skill-box {
+  margin-bottom: 20px;
+}
+.skill-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: $secondery-color;
+}
+.skill-right {
+  margin-left: 50px;
+}
+// skill-achievement-section scss end
+
+// portfolio-section scss start
+.portfolio-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #272927a1;
+    opacity: 0.5;
+    transform: scale(0);
+    transition: 0.5s;
+    pointer-events: none;
+  }
+  &:hover {
+    .theme-details {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+    &::before {
+      transform: scale(1);
+    }
+  }
+}
+.portfolio-img {
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+}
+.theme-details {
+  text-align: center;
+  position: absolute;
+  color: #fff;
+  padding: 25px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transition: 1s;
+}
+// portfolio-section scss end
+
+// modal scss start
+.modal-title span {
+  color: #777;
+  font-weight: 400;
+  font-size: 18px;
+}
+.modal-img {
+  margin-bottom: 100px;
+}
+// modal scss end
+
+// blog-section scss start
+.blog-post {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.4s;
+  &:hover {
+    color: $black;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22);
+    .blog-caption {
+      color: $blue;
+      text-decoration: underline;
+    }
+  }
+}
+.blog-text {
+  padding: 20px;
+}
+.blog-caption,
+.blog-details {
+  margin-bottom: 15px;
+  transition: 0.4s;
+}
+.blog-date {
+  display: flex;
+  align-items: center;
+  i {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+}
+// blog-section scss end
+
+// contact-section scss start
+.contact-title {
+  margin-bottom: 15px;
+}
+.contact-icon {
+  color: $blue;
+  font-size: 40px;
+  display: block;
+  margin-bottom: 5px;
+}
+.contact-details {
+  margin-bottom: 80px;
+}
+.contact-input {
+  border: none;
+  border-bottom: 1px solid #3633333b;
+  margin-bottom: 20px;
+  padding: 10px;
+  &::placeholder {
+    color: $black;
+  }
+  &:focus {
+    outline: none;
+    border-color: $blue;
+  }
+}
+.contact-textarea {
+  resize: none;
+  height: 150px;
+}
+// footer-section scss start
+.footer-section {
+  padding: 20px 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+}
+.footer-copyright {
+  .owner {
+    color: $blue;
+  }
+}
+// footer-section scss end
